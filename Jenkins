@@ -1,0 +1,43 @@
+#My first pipeline
+pipeline {
+    agent any
+
+        stages {
+	        stage('Clone Repository') {
+		            steps {
+			                    git 'https://github.com/nagireddy00/learn-jenk-nagi.git'
+					                }
+							        }
+
+								        stage('Build') {
+									            steps {
+										                    // Commands to build your project, e.g., using Maven
+												                    sh 'mvn clean install'
+														                }
+																        }
+
+																	        stage('Test') {
+																		            steps {
+																			                    // Commands to run tests, e.g., using Maven
+																					                    sh 'mvn test'
+																							                }
+																									        }
+
+																										        stage('Deploy') {
+																											            steps {
+																												                    // Commands to deploy your application, e.g., copying files to a server
+																														                    sh 'scp target/your-app.jar  cloud_user@54.228.104.53:/home/'
+																																                }
+																																		        }
+																																			    }
+
+																																			        post {
+																																				        success {
+																																					            echo 'Pipeline completed successfully!'
+																																						            }
+																																							            failure {
+																																								                echo 'Pipeline failed!'
+																																										        }
+																																											    }
+																																											    }
+
