@@ -41,8 +41,6 @@ pipeline {
                 echo 'deploy this code'
             }
         }
-    }
-	    stages {
         stage('Example') {
             steps {
                 echo "Hello ${params.PERSON}"
