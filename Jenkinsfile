@@ -12,7 +12,7 @@ pipeline {
         password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
     }
 	options {
-		timeout(time: 1, unit: minute)
+		timeout(time: 1, unit: second)
 	}
 
 
