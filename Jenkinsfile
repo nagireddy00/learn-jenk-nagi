@@ -11,9 +11,6 @@ pipeline {
 
         password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
     }
-	options {
-		timeout(time: 1, unit: 'HOURS')
-	}
 
 
     stages {
